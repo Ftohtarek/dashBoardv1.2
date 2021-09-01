@@ -1,3 +1,4 @@
+
 body{
     background-color: #F9F9F9 !important;   
 }
@@ -82,4 +83,8 @@ background-color: rgb(97, 247, 37);
 .updataForm{
     background-color: rgba(0, 0, 139, 0.986);
     display: none;
+}
+.active{
+    background-color: blue ;
+    color: white ;
 }

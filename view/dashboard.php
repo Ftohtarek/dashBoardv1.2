@@ -138,11 +138,14 @@
                                 <?php for ($i = 0; $i <= $totalPag; $i++) { ?>
                                     <form action="../back/systemController.php" method="post">
                                         <input type="hidden" name="pag" value="<?php echo $i ?>">
-                                        <li class="page-item"><button class="page-link" name="setPag"><?php echo $i + 1 ?></button></li>
+                                        <?php if ($i == $pag) { ?>
+                                            <li class="page-item"><button class="page-link active" name="setPag"><?php echo $i + 1 ?></button></li>
+                                        <?php } else { ?>
+                                            <li class="page-item"><button class="page-link" name="setPag"><?php echo $i + 1 ?></button></li>
+                                        <?php } ?>
                                     </form>
                                 <?php } ?>
                             </ul>
-
                         </nav>
 
                     <?php }
@@ -152,5 +155,4 @@
         </div>
     </div>
 </section>
-
 <?php include '../shardFile/footer.php' ?>
