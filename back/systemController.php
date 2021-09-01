@@ -12,8 +12,10 @@ class systemController
             * set tableName if exsist
         */
         $this->db = new dbOperator();
-        $connInfo = $_SESSION['connInfo'];
-        $this->db->newConn($connInfo['dbType'], $connInfo['host'], $connInfo['dbName'], $connInfo['userName'], $connInfo['password']);
+        if (isset($_SESSION['connInfo'])) {
+            $connInfo = $_SESSION['connInfo'];
+            $this->db->newConn($connInfo['dbType'], $connInfo['host'], $connInfo['dbName'], $connInfo['userName'], $connInfo['password']);
+        }
         if (isset($_SESSION['tableName'])) {
             $this->db->setTableName($_SESSION['tableName']);
         }
@@ -63,7 +65,7 @@ class systemController
         * response from setTable Name method is true or null
         * paginagtion setDefault 1
         */
-        $_SESSION['pag']=0;
+        $_SESSION['pag'] = 0;
         if ($this->db->setTableName($tName)) {
             $_SESSION['tableName'] = $tName;
             return 0;

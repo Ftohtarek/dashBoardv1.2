@@ -2,7 +2,6 @@
 include '../shardFile/header.php';
 include '../doc/function.php';
 session_start();
-session_unset();
 ?>
 <!-- form to submit connection data -->
 <div class="container">
